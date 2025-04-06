@@ -1,103 +1,75 @@
-import Image from "next/image";
+"use client"
+import Link from 'next/link';
+import styles from './home.module.scss'
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className={styles.wraper}>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className={styles.container}>
+
+        <motion.video
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          transition={{ duration: 1, delay: 0.3 }}
+
+          className={styles.backgroundvideo}
+          src="https://ik.imagekit.io/localstore/FLORA-original-4dc53f94.mp4?updatedAt=1743944535147"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
+        <nav className={styles.navbar}>
+          <motion.div
+            initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.1 }}
+            className={styles.logowraper}>
+            <svg className={styles.logo} viewBox="0 0 395 116" xmlns="http://www.w3.org/2000/svg" fill="#E60026">
+              <path d="m44.8 18.501-9.174 12.385c-5.3515-6.116-11.62-10.397-18.195-13.455v29.815l7.645-7.7978 8.7153 8.7152-8.7153 8.5624-7.645-7.645v40.977c3.5167 4.1283 7.3392 7.0334 12.996 9.6327v-27.828c6.8805-3.6696 10.703-6.8805 15.443-12.538l0.4586 0.3058v41.588l-17.889 14.373-17.278-12.232c-4.4341-3.211-7.645-5.0456-11.162-6.5746 1.2232-3.3638 1.529-6.116 1.529-9.4798v-72.933l17.889-14.372c8.8682 8.4095 15.137 13.149 25.381 18.501z" />
+              <path d="m111.51 102.75v-79.354c-3.058-3.6696-5.505-5.6573-9.939-7.4921v77.826c1.835 4.587 3.67 7.0336 7.339 9.7856l-13.302 10.856c-2.7522-5.352-5.1986-8.257-9.9385-11.621v-79.354c-3.058-3.6696-5.5044-5.6573-9.9384-7.4921v77.826c1.8347 4.587 3.6695 7.0336 7.3391 9.7856l-13.302 10.856c-2.7522-5.352-5.1986-8.257-9.9385-11.621v-80.883c-1.8348-4.587-3.6696-7.0333-7.3392-9.7855l13.302-10.856c1.0703 2.1406 2.2935 4.1283 3.5167 5.6573l8.4094-6.8805 13.761 9.7856 12.079-9.7856 14.22 10.091c4.434 3.058 7.645 5.0456 11.161 6.5746-1.223 3.3638-1.529 6.116-1.529 9.4798v67.582c1.835 4.587 3.67 7.0336 7.339 9.7856l-13.302 10.856c-2.752-5.352-5.198-8.257-9.938-11.621z" />
+              <path d="m172 115.44-17.277-12.232c-4.434-3.2107-7.645-5.0455-11.162-6.5745 1.223-3.3638 1.529-6.116 1.529-9.4798v-65.288c-1.835-4.587-3.67-7.0333-7.339-9.7855l13.302-10.856c1.07 2.1406 2.294 4.1283 3.517 5.6573l8.409-6.8805 17.278 12.232c4.434 3.2109 7.645 5.0456 11.162 6.5746-1.224 3.3638-1.529 6.116-1.529 9.4798v17.889l-6.269 5.0457c2.905 1.8348 5.198 3.2109 7.798 4.2812-1.224 3.3638-1.529 6.116-1.529 9.4798v36.085l-17.89 14.372zm-11.008-80.425 12.996 9.4798v-18.96c-3.822-4.587-7.339-7.0334-12.996-9.6327v19.112zm12.996 64.524v-37.308l-12.996-9.4798v37.155c3.516 4.1283 7.339 7.0334 12.996 9.6327z" />
+              <path d="m245.33 18.501-9.174 12.385c-5.352-6.116-11.621-10.397-18.195-13.455v29.815l7.645-7.7978 8.715 8.7152-8.715 8.5624-7.645-7.645v40.977c3.516 4.1283 7.339 7.0334 12.996 9.6327v-27.828c6.881-3.6696 10.703-6.8805 15.443-12.538l0.459 0.3058v41.588l-17.889 14.373-17.278-12.232c-4.434-3.211-7.645-5.0456-11.162-6.5746 1.223-3.3638 1.529-6.116 1.529-9.4798v-72.933l17.89-14.372c8.868 8.4095 15.137 13.149 25.381 18.501z" />
+              <path d="m260.36 102.75v-80.883c-1.835-4.587-3.67-7.0333-7.339-9.7855l13.302-10.856c1.07 2.1406 2.294 4.1283 3.517 5.6573l8.409-6.8805 17.278 12.232c4.434 3.2109 7.645 5.0456 11.162 6.5746-1.224 3.3638-1.529 6.116-1.529 9.4798v17.889l-6.269 5.0457c2.905 1.8348 5.198 3.2109 7.798 4.2812-1.224 3.3638-1.529 6.116-1.529 9.4798v28.745c1.834 4.587 3.669 7.0336 7.339 9.7856l-13.303 10.856c-2.752-5.352-5.198-8.257-9.938-11.621v-40.518l-12.996-9.4798v40.977c1.834 4.587 3.669 7.0336 7.339 9.7856l-13.303 10.856c-2.752-5.352-5.198-8.257-9.938-11.621zm15.902-67.734 12.996 9.4798v-18.96c-3.823-4.587-7.339-7.0334-12.996-9.6327v19.112z" />
+              <path d="m340.47 6.8805c-0.917 3.5676-2.09 7.4411-3.517 11.62-1.427 4.1793-3.007 8.3585-4.74 12.538-1.631 4.0773-3.261 7.9508-4.892 11.62h-9.939c0.714-2.8542 1.427-5.9122 2.141-9.174 0.815-3.2619 1.529-6.5237 2.14-9.7856 0.714-3.3638 1.325-6.6256 1.835-9.7855 0.612-3.16 1.121-6.0651 1.529-8.7153h14.373l1.07 1.6819z" />
+              <path d="m348.39 92.81v-20.947c6.88-3.6696 10.703-6.8805 15.443-12.538l0.458 0.3058v40.06c5.658-2.5993 9.48-5.5044 12.997-9.6327v-37.613l-6.422-5.0457-8.868 7.7979c-4.434-3.8225-8.562-6.7276-13.608-9.0211 1.223-3.3637 1.529-6.1159 1.529-9.4797v-22.323l17.889-14.372c8.868 8.4095 15.137 13.149 25.381 18.501l-9.174 12.385c-5.351-6.116-11.62-10.397-18.195-13.455v22.782l6.422 5.0456 8.868-7.7978c4.434 3.8225 8.563 6.7276 13.608 9.021-1.223 3.3638-1.529 6.116-1.529 9.4798v40.671l-26.91 18.96-9.327-7.492c-3.822-3.058-6.88-4.434-10.091-5.81 1.223-3.364 1.529-6.1162 1.529-9.48z" />
+            </svg>
+
+          </motion.div>
+        </nav>
+
+        <div className={styles.content}>
+          <motion.p
+            initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0, ease: 'easeInOut' }}
+            className={styles.description}>
+            From Istanbul to Texas — Fired Up for India.
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.2, ease: 'easeInOut' }}
+            className={styles.title}>
+            Smoked<span>,</span> Spiced <span>&</span> Served Hot
+          </motion.h1>
+
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <motion.div
+          initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 0.2 }}>
+          <Link href="/" className={styles.button}>
+            Order Now
+          </Link>
+        </motion.div>
+
+
+      </div>
     </div>
   );
 }
