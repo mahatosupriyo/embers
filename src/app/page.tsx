@@ -1,7 +1,8 @@
 "use client"
 import Link from 'next/link';
 import styles from './home.module.scss'
-import { motion } from 'framer-motion';
+import { easeInOut, motion } from 'framer-motion';
+import Footer from '@/components/footer/footer';
 
 export default function Home() {
   return (
@@ -60,9 +61,10 @@ export default function Home() {
         </div>
 
         <motion.div
+          whileHover={{ outlineOffset: '0.6rem' }}
           initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ delay: 0.2 }}>
+          transition={{ delay: 0.2, ease: easeInOut }}>
           <Link href="/" className={styles.button}>
             Order Now
           </Link>
@@ -70,6 +72,7 @@ export default function Home() {
 
 
       </div>
+      <Footer />
     </div>
   );
 }
