@@ -8,7 +8,7 @@ type MenuType = "snack" | "breakfast" | "lunch" | "dinner"
 const menuData = {
     snack: {
         text: "Snack",
-        image: "https://images.unsplash.com/photo-1741606552241-fbd67e574f7f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1626323109697-df55d20f06a8?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     breakfast: {
         text: "Breakfast",
@@ -69,12 +69,12 @@ export default function QuickMenu() {
             />
 
             {/* Next background (for transition) */}
-            {isTransitioning && (
+            {/* {isTransitioning && (
                 <div
                     className={`${styles.background} ${styles.fadeIn}`}
                     style={{ backgroundImage: `url(${nextMenuData.image})` }}
                 />
-            )}
+            )} */}
 
             {/* Text overlay */}
             <div className={styles.textContainer}>
