@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './home.module.scss'
 import { easeInOut, motion } from 'framer-motion';
 import Footer from '@/components/footer/footer';
+import QuickMenu from '@/components/lander/quickspot';
 
 export default function Home() {
   return (
@@ -72,6 +73,7 @@ export default function Home() {
 
 
       </div>
+      <QuickMenu/>
       <Footer />
     </div>
   );

@@ -1,0 +1,200 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s ease; // Faster transition
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.textContainer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.textWrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.prefix,
+.suffix {
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: 0;
+
+    &.visible {
+        animation: fadeIn 0.4s forwards; // Faster animation
+        animation-delay: 0.2s; // Shorter delay
+    }
+
+    &.hidden {
+        animation: fadeOut 0.4s forwards; // Faster animation
+    }
+
+    @media (min-width: 768px) {
+        font-size: 2.5rem;
+    }
+}
+
+.prefix {
+    margin-right: 1.5rem;
+}
+
+.suffix {
+    margin-left: 1.5rem;
+}
+
+.mainTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainText {
+    // font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+
+    @media (min-width: 768px) {
+        font-size: 10rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 14rem;
+    }
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+
+    .visible & {
+        animation: maskIn 0.4s forwards; // Faster animation
+    }
+
+    .hidden & {
+        animation: maskOut 0.4s forwards; // Faster animation
+    }
+}
+
+.underline {
+    width: 0;
+    height: 2px;
+    background-color: white;
+    margin-top: 0.5rem;
+
+    &.visible {
+        animation: lineGrow 0.4s forwards; // Faster animation
+        animation-delay: 0.05s; // Shorter delay
+    }
+
+    &.hidden {
+        animation: lineShrink 0.4s forwards; // Faster animation
+    }
+}
+
+@keyframes maskIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        clip-path: inset(100% 0 0 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes maskOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+        clip-path: inset(0 0 100% 0);
+    }
+}
+
+@keyframes lineGrow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes lineShrink {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Add fadeOut animation
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
