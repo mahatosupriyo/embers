@@ -1,80 +1,67 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import styles from ".//quickspot.module.scss"
+import styles from "./quickspot.module.scss"
 
+// Define the menu types and their corresponding data
 type MenuType = "snack" | "breakfast" | "lunch" | "dinner"
 
 const menuData = {
     snack: {
         text: "Snack",
-        image: "https://images.unsplash.com/photo-1626323109697-df55d20f06a8?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1626323109697-df55d20f06a8?q=80&w=2487&auto=format&fit=crop",
     },
     breakfast: {
         text: "Breakfast",
-        image: "https://images.unsplash.com/photo-1741606090938-7a238d2eff3b?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1741606090938-7a238d2eff3b?q=80&w=2487&auto=format&fit=crop",
     },
     lunch: {
         text: "Lunch",
-        image: "https://plus.unsplash.com/premium_photo-1672976129906-5982aa060951?q=80&w=2488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://plus.unsplash.com/premium_photo-1672976129906-5982aa060951?q=80&w=2488&auto=format&fit=crop",
     },
     dinner: {
         text: "Dinner",
-        image: "https://images.unsplash.com/photo-1697724830729-59a0353b31e5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1697724830729-59a0353b31e5?q=80&w=2340&auto=format&fit=crop",
     },
 }
 
 export default function QuickMenu() {
     const [currentMenu, setCurrentMenu] = useState<MenuType>("snack")
-    const [nextMenu, setNextMenu] = useState<MenuType>("breakfast")
     const [isTransitioning, setIsTransitioning] = useState(false)
     const [isTextVisible, setIsTextVisible] = useState(true)
 
-    // Cycle through menu types
     useEffect(() => {
         const menuTypes: MenuType[] = ["snack", "breakfast", "lunch", "dinner"]
 
         const interval = setInterval(() => {
             setIsTextVisible(false) // Start text exit animation
 
-            // After text exit animation completes, change background
             setTimeout(() => {
-                setIsTransitioning(true)
+                setIsTransitioning(true) // Start background transition
 
                 const currentIndex = menuTypes.indexOf(currentMenu)
                 const nextIndex = (currentIndex + 1) % menuTypes.length
-                setNextMenu(menuTypes[nextIndex])
+                setCurrentMenu(menuTypes[nextIndex]) // Update current menu
 
-                // After background transition starts, update current menu
                 setTimeout(() => {
-                    setCurrentMenu(menuTypes[nextIndex])
-                    setIsTransitioning(false)
+                    setIsTransitioning(false) // End background transition
                     setIsTextVisible(true) // Start text entrance animation
-                }, 300) // Faster background transition time
-            }, 250) // Faster text exit animation duration
-        }, 4000)
+                }, 300) // Background transition duration
+            }, 250) // Text exit animation duration
+        }, 4000) // Interval for cycling through menus
 
-        return () => clearInterval(interval)
+        return () => clearInterval(interval) // Cleanup interval on component unmount
     }, [currentMenu])
 
     const currentMenuData = menuData[currentMenu]
-    const nextMenuData = menuData[nextMenu]
 
     return (
         <div className={styles.hero}>
-            {/* Current background */}
+            {/* Background image */}
             <div
                 className={`${styles.background} ${isTransitioning ? styles.fadeOut : ""}`}
                 style={{ backgroundImage: `url(${currentMenuData.image})` }}
             />
-
-            {/* Next background (for transition) */}
-            {/* {isTransitioning && (
-                <div
-                    className={`${styles.background} ${styles.fadeIn}`}
-                    style={{ backgroundImage: `url(${nextMenuData.image})` }}
-                />
-            )} */}
 
             {/* Text overlay */}
             <div className={styles.textContainer}>
