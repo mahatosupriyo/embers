@@ -26,7 +26,9 @@ export default function TextHighlightScroll() {
   return (
     <div className={styles.container} ref={containerRef}>
       <div className={styles.content}>
-        <p style={{fontSize: '1.66rem', color: '#a7a7a7', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2rem'}}>Make your story live</p>
+        <p style={{fontSize: '1.66rem', color: '#a7a7a7', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2rem'}}>
+        We Let the Fire Speak
+        </p>
         <motion.p
           initial={{ opacity: 0, y: '2%', filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
