@@ -11,7 +11,7 @@
     .footerwraper {
         width: 100%;
         max-width: 200rem;
-        // background-color: hsl(0, 0, 10%);
+        background-color: hsl(0, 0, 90%);
 
         .footercontent {
             width: 100%;
@@ -20,7 +20,7 @@
             flex-direction: row;
             gap: 0rem;
             padding: 2rem 10rem;
-            color: hsl(0, 0%, 90%);
+            color: hsl(0, 0%, 10%);
 
             &:nth-child(1) {
                 // border-bottom: 0.02rem solid hsl(0, 0%, 16%);
@@ -47,7 +47,7 @@
                 .linklabel {
                     display: flex;
                     padding: 1rem 0rem;
-                    color: hsl(0, 0%, 60%);
+                    color: hsl(0, 0%, 40%);
                     font-size: 1.6rem;
                     font-weight: 500;
                 }
@@ -67,7 +67,7 @@
 
                     .linkitem {
                         text-decoration: none;
-                        color: #fff;
+                        color: hsl(0, 0%, 20%);
                         font-size: 1.8rem;
                         font-weight: 500;
                         @include smooth;
@@ -96,7 +96,7 @@
                         display: inline-flex;
                         align-items: center;
                         justify-content: center;
-                        background: hsl(0, 0, 18%);
+                        background: hsl(0, 0, 28%);
                         border-radius: 0.4rem;
                         padding: 2rem;
                         border-radius: 6rem;

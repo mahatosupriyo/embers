@@ -4,6 +4,7 @@ import styles from './home.module.scss'
 import { easeInOut, motion } from 'framer-motion';
 import Footer from '@/components/footer/footer';
 import QuickMenu from '@/components/lander/quickspot';
+import TextHighlightScroll from '@/components/lander/textscroll/txtscroll';
 
 export default function Home() {
   return (
@@ -73,7 +74,48 @@ export default function Home() {
 
 
       </div>
-      <QuickMenu/>
+
+      <div className={styles.textscroll}>
+        <TextHighlightScroll />
+      </div>
+
+      <QuickMenu />
+      <div className={styles.ratingsection}>
+        <div className={styles.ratingcontent}>
+          <p className={styles.subheading}>Loved by BBQ Lovers</p>
+          <h1 className={styles.heading}>
+            the proof <br />writes itself
+          </h1>
+        </div>
+
+        <div className={styles.rating}>
+          <div className={styles.ratecard}>
+            <img
+              src="https://ik.imagekit.io/localstore/rating.svg?updatedAt=1745251124982"
+              className={styles.rate}
+            />
+            <h1 className={styles.ratepercent}>
+              4.8 <span className={styles.outof}>/5</span>
+            </h1>
+            <h2 className={styles.owner}>
+              Zomato
+            </h2>
+          </div>
+
+          <div className={styles.ratecard}>
+            <img
+              src="https://ik.imagekit.io/localstore/swiggystar.svg?updatedAt=1745251178704"
+              className={styles.rate}
+            />
+            <h1 className={styles.ratepercent}>
+              4.9 <span className={styles.outof}>/5</span>
+            </h1>
+            <h2 className={styles.owner}>
+              swiggy
+            </h2>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

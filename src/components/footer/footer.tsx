@@ -14,13 +14,13 @@ export default function Footer() {
                     <div className={styles.linklist}>
 
                         <div className={styles.linkcolumn}>
-                            <p className={styles.linklabel}>Meals</p>
-                            <Link draggable="false" href="/" className={styles.linkitem}>Veg</Link>
-                            <Link draggable="false" href="/" className={styles.linkitem}>Non-Veg</Link>
+                            <p className={styles.linklabel}>Quick Links</p>
+                            <Link draggable="false" href="/" className={styles.linkitem}>Meals</Link>
+                            <Link draggable="false" href="/" className={styles.linkitem}>Legals</Link>
                             {/* <Link draggable="false" href="/" className={styles.linkitem}>Voyager</Link> */}
                         </div>
 
-                        <div className={styles.linkcolumn}>
+                        {/* <div className={styles.linkcolumn}>
                             <p className={styles.linklabel}>Resources</p>
 
                             <Link draggable="false" href="/" className={styles.linkitem}>Blogs</Link>
@@ -34,7 +34,7 @@ export default function Footer() {
                             <Link draggable="false" href="/" className={styles.linkitem}>About us</Link>
                             <Link draggable="false" href="/" className={styles.linkitem}>Careers</Link>
                             <Link draggable="false" href="/" className={styles.linkitem}>Legals</Link>
-                        </div>
+                        </div> */}
 
 
                     </div>
