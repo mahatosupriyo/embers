@@ -171,6 +171,8 @@
     max-width: 1200px;
     max-height: 90vh;
     background-color: hsl(0, 0, 90%);
+    background-color: #e6e6e6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.84' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     border-radius: 12px;
     overflow-y: auto;
     color: #333;
@@ -228,7 +230,7 @@
 }
 
 .categoryTitle {
-    font-size: 1.56rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 1.5rem;
