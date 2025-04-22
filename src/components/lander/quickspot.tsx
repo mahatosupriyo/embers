@@ -275,7 +275,7 @@ export default function QuickMenu() {
                           <div className={styles.menuItemInfo}>
                             <h4 className={styles.itemname}>{item.name}</h4>
                             <div className={styles.menuItemDetails}>
-                              <span className={styles.price}><span style={{fontWeight: 400, fontSize: '1.2rem', margin: '0rem 0.2rem'}}>₹</span>{item.price.toFixed(2)}</span>
+                              <span className={styles.price}><span style={{fontWeight: 400, fontSize: '1.2rem', margin: '0rem 0.2rem'}}>₹</span>{item.price}</span>
                               <span className={styles.calories}>{item.calories} Cal.</span>
                             </div>
                           </div>
