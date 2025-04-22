@@ -9,8 +9,6 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-
-    opacity: 0.5;
 }
 
 .button {
@@ -99,11 +97,10 @@
                 text-align: center;
                 line-height: 100%;
                 margin-bottom: 2rem;
-                font-weight: 800;
-                // font-family: "BT Beau Sans";
-                // font-family: Involve;
 
-
+                font-family: "interstate", sans-serif;
+                font-weight: 900;
+                font-style: normal;
             }
         }
 
@@ -114,7 +111,7 @@
     display: flex;
     width: 100%;
     max-width: 200rem;
-    padding: 10rem 10rem;
+    padding: 16rem 10rem;
     justify-content: space-between;
     gap: 10rem;
     background-color: hsl(0, 0, 100%);
@@ -133,6 +130,8 @@
 
             .rate {
                 height: 1.4rem;
+
+
             }
 
             .ratepercent {
@@ -143,6 +142,10 @@
                 flex-direction: row;
                 align-items: flex-end;
                 line-height: 100%;
+
+                font-family: "interstate", sans-serif;
+                font-weight: 800;
+                font-style: normal;
 
                 .outof {
                     font-size: 3rem;
@@ -174,6 +177,8 @@
             letter-spacing: 0.2rem;
             font-weight: 600;
             color: #a7a7a7;
+
+
         }
 
         .heading {
@@ -181,6 +186,10 @@
             line-height: 100%;
             font-weight: 700;
             color: hsl(0, 0, 10%);
+
+            font-family: "interstate", sans-serif;
+            font-weight: 900;
+            font-style: normal;
         }
     }
 }

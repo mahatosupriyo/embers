@@ -14,7 +14,7 @@ export default function Home() {
 
         <motion.video
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
+          animate={{ opacity: 0.36 }}
           transition={{ duration: 1, delay: 0.3 }}
 
           className={styles.backgroundvideo}
@@ -63,7 +63,11 @@ export default function Home() {
         </div>
 
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexDirection: 'column' }}>
-          <h3 style={{ fontSize: '1.56rem', fontWeight: 500 }}>Order now on</h3>
+          <motion.h3
+            initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.1 }}
+            style={{ fontSize: '1.56rem', fontWeight: 500 }}>Order now on</motion.h3>
           <motion.div
             whileHover={{ outlineOffset: '0.6rem' }}
             initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
