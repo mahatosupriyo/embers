@@ -270,7 +270,7 @@ export default function QuickMenu() {
                       .map((item) => (
                         <div key={item.id} className={styles.menuItem}>
                           <div className={styles.menuItemImage}>
-                            <img src={item.image || "/placeholder.svg"} alt={item.name} />
+                            <img draggable="false" src={item.image || "/placeholder.svg"} alt={item.name} />
                           </div>
                           <div className={styles.menuItemInfo}>
                             <h4 className={styles.itemname}>{item.name}</h4>

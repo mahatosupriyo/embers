@@ -14,7 +14,7 @@ export default function Home() {
 
         <motion.video
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.36 }}
+          animate={{ opacity: 0.66 }}
           transition={{ duration: 1, delay: 0.3 }}
 
           className={styles.backgroundvideo}
@@ -69,11 +69,11 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             style={{ fontSize: '1.56rem', fontWeight: 500 }}>Order now on</motion.h3>
           <motion.div
+          className={styles.btnwraper}
             whileHover={{ outlineOffset: '0.6rem' }}
             initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: 0.2, ease: easeInOut }}
-            style={{ display: 'flex', gap: '0.6rem', flexDirection: 'row' }}
           >
 
             <Link href="/" className={styles.button} style={{ background: '#E23744' }}>
@@ -112,6 +112,7 @@ export default function Home() {
             <img
               src="https://ik.imagekit.io/localstore/rating.svg?updatedAt=1745251124982"
               className={styles.rate}
+              draggable="false"
             />
             <h1 className={styles.ratepercent}>
               4.8 <span className={styles.outof}>/5</span>
@@ -125,6 +126,7 @@ export default function Home() {
             <img
               src="https://ik.imagekit.io/localstore/swiggystar.svg?updatedAt=1745251178704"
               className={styles.rate}
+              draggable="false"
             />
             <h1 className={styles.ratepercent}>
               4.9 <span className={styles.outof}>/5</span>

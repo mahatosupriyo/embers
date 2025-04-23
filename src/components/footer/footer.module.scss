@@ -22,8 +22,13 @@
             padding: 2rem 10rem;
             color: hsl(0, 0%, 10%);
 
+            @media only screen and (max-width: 40rem) {
+                flex-direction: column;
+                gap: 6rem;
+                padding: 2rem 6rem;
+            }
+
             &:nth-child(1) {
-                // border-bottom: 0.02rem solid hsl(0, 0%, 16%);
                 padding: 10rem 10rem 4rem 10rem;
             }
 
@@ -38,11 +43,11 @@
 
             .linklist {
                 width: 100%;
-                max-width: 30%;
+                // max-width: 30%;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                gap: 4rem;
+                justify-content: flex-start;
+                gap: 2rem;
 
                 .linklabel {
                     display: flex;
