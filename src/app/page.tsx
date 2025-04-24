@@ -5,6 +5,7 @@ import { easeInOut, motion } from 'framer-motion';
 import Footer from '@/components/footer/footer';
 import QuickMenu from '@/components/lander/quickspot';
 import TextHighlightScroll from '@/components/lander/textscroll/txtscroll';
+import MenuSection from '@/components/lander/menusection/menusection';
 
 export default function Home() {
   return (
@@ -69,7 +70,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             style={{ fontSize: '1.56rem', fontWeight: 500 }}>Order now on</motion.h3>
           <motion.div
-          className={styles.btnwraper}
+            className={styles.btnwraper}
             whileHover={{ outlineOffset: '0.6rem' }}
             initial={{ opacity: 0, y: '2rem', filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -99,6 +100,11 @@ export default function Home() {
       </div>
 
       <QuickMenu />
+
+      <div className={styles.franchisewraper}>
+        <MenuSection />
+      </div>
+
       <div className={styles.ratingsection}>
         <div className={styles.ratingcontent}>
           <p className={styles.subheading}>Loved by BBQ Lovers</p>
