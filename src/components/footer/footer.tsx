@@ -15,7 +15,7 @@ export default function Footer() {
 
                         <div className={styles.linkcolumn}>
                             <p className={styles.linklabel}>Quick Links</p>
-                            <Link draggable="false" href="/" className={styles.linkitem}>Meals</Link>
+                            <Link draggable="false" href="/menu" className={styles.linkitem}>Menu</Link>
                             <Link draggable="false" href="/" className={styles.linkitem}>Legals</Link>
                             {/* <Link draggable="false" href="/" className={styles.linkitem}>Voyager</Link> */}
                         </div>
